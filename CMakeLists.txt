@@ -8,7 +8,7 @@ find_package(SFML COMPONENTS window graphics system REQUIRED)
 
 add_subdirectory(external EXCLUDE_FROM_ALL)
 
-add_executable(kaizen source/kaizen/main.cc source/kaizen/ecs/ecs.h)
+add_executable(kaizen source/kaizen/main.cc source/kaizen/game.cc)
 
 target_include_directories(kaizen
     PRIVATE 
