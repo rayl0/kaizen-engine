@@ -3,3 +3,4 @@ build
 .directory
 bin
 bin-int
+build.sh
