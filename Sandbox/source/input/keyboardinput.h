@@ -2,7 +2,7 @@
 
 #include <SDL2/SDL.h>
 
-#include "types.h"
+#include "core/types.h"
 
 namespace kz {
 class KeyboardInput {

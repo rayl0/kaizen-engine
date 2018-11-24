@@ -1,4 +1,4 @@
-workspace "Hazel"
+workspace "Kaizen"
     location "build"
 	
 	platforms 
@@ -64,7 +64,8 @@ project "Sandbox"
 
 	filter "system:linux"
 		staticruntime "On"
-		buildoptions {
+		buildoptions 
+		{
 			"-fPIC",
 			"-no-canonical-prefixes",
 			"-Wa,--noexecstack",
@@ -75,8 +76,14 @@ project "Sandbox"
 			"-Wundef",
 			"-msse2"
 		}
-		linkoptions {
+		linkoptions 
+		{
 			"-Wl,--gc-sections"
+		}
+
+		defines 
+		{ 
+			"KZ_PLATFORM_LINUX"
 		}
 
 	filter "configurations:Debug"

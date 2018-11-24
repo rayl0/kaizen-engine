@@ -3,16 +3,21 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 
+#include "graphics/renderer.h"
+#include "platform/window.h"
+#include "settings.h"
 #include "types.h"
 
 namespace kz {
 class Game {
-    SDL_Window* game_window_;
-    SDL_Renderer* game_renderer_;
+    Window game_window_;
+
+    Settings settings_;
 
     SDL_Event global_events_;
 
-    bool is_running_;
+public:
+    static Renderer game_renderer_;
 
 public:
     Game();
