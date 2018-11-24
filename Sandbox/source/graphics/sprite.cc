@@ -3,24 +3,27 @@
 #include <cstdlib>
 
 namespace kz {
-
-Sprite* CreateSprite(SDL_Texture* texture, SDL_Rect* source, SDL_Rect* destination)
+Sprite::Sprite()
+    : tex_(nullptr)
+    , clip_({ 0, 0, 0, 0 })
 {
-    Sprite* sprite = (Sprite*)malloc(sizeof(Sprite));
-    sprite->texture = texture;
-    sprite->source_rect = source;
-    sprite->destination_rect = destination;
-
-    return sprite;
+}
+Sprite::Sprite(const Texture& tex)
+    : tex_(&tex)
+    , clip_({ 0, 0, (s32)tex_->GetWidth(), (s32)tex_->GetHeight() })
+{
+}
+Sprite::Sprite(const Texture& tex, const SDL_Rect& clip)
+    : tex_(&tex)
+    , clip_(clip)
+{
+}
+Sprite::~Sprite()
+{
 }
 
-void DrawSprite(SDL_Renderer* renderer, Sprite* sprite)
+void Sprite::Draw(const SDL_Rect& dest)
 {
-    SDL_RenderCopy(renderer, sprite->texture, sprite->source_rect, sprite->destination_rect);
-}
-
-void DestroySprite(Sprite* sprite)
-{
-    free(sprite);
+    tex_->Draw(dest, &clip_);
 }
 }

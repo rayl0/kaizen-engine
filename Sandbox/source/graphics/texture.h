@@ -12,6 +12,9 @@ namespace kz {
 class Texture {
     SDL_Texture* tex_;
 
+    u32 width_;
+    u32 height_;
+
     NULL_COPY_AND_ASSIGN(Texture)
 public:
     Texture();
@@ -23,5 +26,7 @@ public:
     void Destroy();
 
     inline SDL_Texture* GetSdlTexture() const { return tex_; }
+    inline const u32& GetWidth() const { return width_; }
+    inline const u32& GetHeight() const { return height_; }
 };
 }

@@ -22,6 +22,8 @@ Texture::~Texture()
 void Texture::Create(const Image& img)
 {
     tex_ = SDL_CreateTextureFromSurface(Game::game_renderer_.GetSdlRenderer(), img.GetSdlSurface());
+    width_ = img.GetWidth();
+    height_ = img.GetHeight();
 }
 
 void Texture::Draw(const SDL_Rect& destination, SDL_Rect* clip) const
