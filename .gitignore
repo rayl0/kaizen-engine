@@ -4,3 +4,7 @@ build
 bin
 bin-int
 build.sh
+
+\.codelite/
+
+sandbox/Sandbox\.project

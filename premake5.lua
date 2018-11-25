@@ -19,7 +19,7 @@ dofile "external/external.lua"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-project "Sandbox"
+project "sandbox"
 	location "build/Sandbox"
 	kind "ConsoleApp"
 	language "C++"
